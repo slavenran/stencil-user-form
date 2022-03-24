@@ -21,6 +21,10 @@
   overflow-y: auto;
 }
 
+.table {
+  width: 500px;
+}
+
 input, select {
   box-sizing: border-box;
   padding: 15px 20px;
@@ -33,7 +37,7 @@ input, select {
   transition: linear 0.2s;
 
   &:focus {
-    box-shadow: 0px 0px 10px 1px #c351d4;
+    box-shadow: 0px 0px 10px 1px #8360c3;
   }
 }
 
@@ -47,20 +51,69 @@ select {
 }
 
 .submit-button {
-  background-color: #bd59d4;
+  background-color: #8360c3;
   color: white;
   width: 50%;
   margin: auto;
   margin-top: 50px;
   font-weight: 600;
-  box-shadow: 0px 0px 10px 1px #c351d4;
+  box-shadow: 0px 0px 10px 1px #8360c3;
   border: none;
   padding: 10px;
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 10px 2px #c351d4;
+    box-shadow: 0px 0px 10px 2px #8360c3;
   }
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+thead th {
+  background-color: #2ebf91;
+  color: #ffffff;
+  text-align: left;
+}
+
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+th, td {
+  padding: 12px 15px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid #2ebf91;
+}
+
+tbody tr.active-row {
+  font-weight: bold;
+  color: #2ebf91;
+}
+
+th::first-letter {
+  text-transform: capitalize;
 }
 
 .error {

@@ -104,7 +104,7 @@ export class UserForm {
             {(this.isSubmitted && !this.isValid(States.username)) && <div class="error">{this._usernameValidator.errorMessage}</div>}
           </div>
           <div>
-            <input type="email" placeholder="E-mail" value={this.email} onInput={(e) => this.handleChanges(e, States.email)} />
+            <input type="text" placeholder="E-mail" value={this.email} onInput={(e) => this.handleChanges(e, States.email)} />
             {(this.isSubmitted && !this.isValid(States.email)) && <div class="error">{this._emailValidator.errorMessage}</div>}
           </div>
           <div>
@@ -126,12 +126,27 @@ export class UserForm {
           </div>
           <input class='submit-button' type="submit" value="SUBMIT" />
         </form>
-        <div class='sub-container'>
-          {
-            this.userList.map((user) => <div>
-              {user.username}
-            </div>)
-          }
+        <div class='sub-container table'>
+          <table>
+            <thead>
+              <tr>
+                {
+                  Object.values(States).map((header) => <th>{header}</th>)
+                }
+              </tr>
+            </thead>
+            <tbody>
+              {
+                this.userList.map((user) => {
+                  return <tr>
+                    {
+                      Object.values(user).map((value) => <td>{value}</td>)
+                    }
+                  </tr>
+                })
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     )
