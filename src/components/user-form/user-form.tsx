@@ -45,11 +45,11 @@ export class UserForm {
     console.log(newValue);
   }
 
-  _usernameValidator: Validator<string> = defaultValidator;
-  _emailValidator: Validator<string> = defaultValidator;
-  _telephoneValidator: Validator<string> = defaultValidator;
-  _zipValidator: Validator<string> = defaultValidator;
-  _genderValidator: Validator<string> = defaultValidator;
+  private _usernameValidator: Validator<string> = defaultValidator;
+  private _emailValidator: Validator<string> = defaultValidator;
+  private _telephoneValidator: Validator<string> = defaultValidator;
+  private _zipValidator: Validator<string> = defaultValidator;
+  private _genderValidator: Validator<string> = defaultValidator;
 
   isValid(data: string | Array<string>) {
     return typeof data === 'string' ?
